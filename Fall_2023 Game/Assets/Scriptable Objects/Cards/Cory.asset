@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cory the Impaler
   description: The slickest Glizzy west of the Mississippi
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 5f6bfba4756eb334ead2251d4d690638, type: 3}
   cost: 4
   damage: 3
   health: 3
