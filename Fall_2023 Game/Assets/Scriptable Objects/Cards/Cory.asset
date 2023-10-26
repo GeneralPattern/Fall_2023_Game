@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Cory
   m_EditorClassIdentifier: 
   name: Cory
-  subName: User
   description: Most Average coder west of the Mississippi
+  castLevel: +2
   artwork: {fileID: 21300000, guid: 56e456ab0f7f79a4dbabcc9079c49a94, type: 3}
-  cardType: {fileID: 21300000, guid: ce52c3e258552254385e647ac0537b7a, type: 3}
+  cardType: {fileID: 21300000, guid: c9bf8a69f7d44f649a28bd831bb0dd82, type: 3}
   cost: 4
   damage: 3
   health: 3

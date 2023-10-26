@@ -4,8 +4,8 @@ using UnityEngine;
 public class CardData : ScriptableObject
 {
     public new string name;
-    public string subName;
     public string description;
+    public string castLevel;
     
     public Sprite artwork;
     public Sprite cardType;
@@ -14,6 +14,7 @@ public class CardData : ScriptableObject
     public int damage;
     public int health;
     public int spellSlots;
+    
 
     
     public void Print()
