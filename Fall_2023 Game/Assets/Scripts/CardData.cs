@@ -9,7 +9,8 @@ public class CardData : ScriptableObject
     
     public Sprite artwork;
     public Sprite cardType;
-    
+
+    public int cardID;
     public int cost;
     public int damage;
     public int health;
