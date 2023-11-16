@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card List")]
 public class CardList : ScriptableObject
 {
-    public CardData[] cardData;
+    public List<CardData> cardData = new List<CardData>();
 }

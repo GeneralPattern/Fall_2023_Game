@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 857e64ec3be88ad488d6af3b5c2957f1, type: 3}
-  m_Name: Ivie
+  m_Name: Arcane Bolt
   m_EditorClassIdentifier: 
-  name: Ivie
-  description: Ivasaurus
-  castLevel: +2
-  artwork: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
-  cardType: {fileID: 21300000, guid: 0a261a6cfa75fa244938dcf0f9296865, type: 3}
-  cardID: 2
-  cost: 2
-  damage: 3
-  health: 2
-  spellSlots: 2
+  name: Arcane Bolt
+  description: Place holder for description
+  castLevel: 2
+  artwork: {fileID: 21300000, guid: 9c0d6ec706e01ce448aea81584af092b, type: 3}
+  cardType: {fileID: 21300000, guid: 498d54becd9829840a215eba92b66360, type: 3}
+  cardID: 0
+  cost: 5
+  damage: 0
+  health: 0
+  spellSlots: 0
