@@ -9,7 +9,7 @@ public class CardDeck : MonoBehaviour
     public CardList cardList;
     public CardList handList;
 
-    void Start()
+    void Awake()
     {
         if (cardList.cardData != null && cardList.cardData.Count > 0)
         {
@@ -20,9 +20,6 @@ public class CardDeck : MonoBehaviour
 
                 // Get the random CardData
                 CardData randomCardData = cardList.cardData[randomIndex];
-
-                // Use the random CardData
-                Debug.Log("Random CardData: " + randomCardData.name + ", Value: " + randomCardData.cardID);
 
                 // Add the random CardData to the HandList
                 AddToHand(randomCardData, randomIndex);

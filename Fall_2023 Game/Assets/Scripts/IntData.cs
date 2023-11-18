@@ -6,4 +6,6 @@ public class IntData : ScriptableObject
 {
     public int goldAmount;
     public int diceRoll;
+    public int enemyHealth;
+    public int value = 0;
 }

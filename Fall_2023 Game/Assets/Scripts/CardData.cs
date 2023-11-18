@@ -5,7 +5,7 @@ public class CardData : ScriptableObject
 {
     public new string name;
     public string description;
-    public string castLevel;
+    public int castLevel;
     
     public Sprite artwork;
     public Sprite cardType;
@@ -16,10 +16,5 @@ public class CardData : ScriptableObject
     public int health;
     public int spellSlots;
     
-
     
-    public void Print()
-    {
-        Debug.Log(name + " " + description + ", The card costs: " + cost);
-    }
 }

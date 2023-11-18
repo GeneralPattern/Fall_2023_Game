@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
 public class CardDisplay : MonoBehaviour
 {
     public CardList handList;
-    public int handNo;
+    public int slotNumber;
 
     public Text nameText;
     public Text descriptionText;
@@ -30,7 +31,7 @@ public class CardDisplay : MonoBehaviour
         if (handList != null && handList.cardData != null && handList.cardData.Count > 0)
         {
             // Display the first card
-            DisplayCard(handList.cardData[handNo]);
+            DisplayCard(handList.cardData[slotNumber]);
         }
         else
         {
@@ -45,9 +46,9 @@ public class CardDisplay : MonoBehaviour
         if (nameText != null && castLevelText != null && descriptionText != null &&
             costText != null && artworkImage != null && cardImage != null)
         {
-            // Display logic for an individual card
+            
             nameText.text = card.name;
-            castLevelText.text = card.castLevel;
+            castLevelText.text = card.castLevel.ToString();
             descriptionText.text = card.description;
             costText.text = card.cost.ToString();
 
