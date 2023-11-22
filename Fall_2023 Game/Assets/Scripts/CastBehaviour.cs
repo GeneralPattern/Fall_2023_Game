@@ -9,7 +9,7 @@ public class CastBehaviour : MonoBehaviour
     public IntData cast;
     public IntData enemy;
     public CardData caster;
-
+    
     public IntData castedCount;
     public CardList handList;
     public Text diceRollText;
@@ -80,8 +80,10 @@ public class CastBehaviour : MonoBehaviour
         if (cast.diceRoll >= card.cost)
         {
             enemy.enemyHealth -= card.damage;
+            caster.health += card.healingNo;
             Debug.Log(enemy.enemyHealth);
             Debug.Log(card.name);
+            Debug.Log(caster.health);
         }
         else
         {

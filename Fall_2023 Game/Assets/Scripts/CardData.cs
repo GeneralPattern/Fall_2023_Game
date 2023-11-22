@@ -15,6 +15,7 @@ public class CardData : ScriptableObject
     public int damage;
     public int health;
     public int spellSlots;
-    
-    
+    public int healingNo;
+
+
 }
