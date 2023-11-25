@@ -15,6 +15,8 @@ public class CastBehaviour : MonoBehaviour
     public Text diceRollText;
 
     private GameObject slotNo;
+
+    public DiceThrower diceThrower;
     
     
     
@@ -37,7 +39,7 @@ public class CastBehaviour : MonoBehaviour
 
         if (castedCount.value < caster.spellSlots)
         {
-            cast.diceRoll = Random.Range(2, 13);
+            diceThrower.RollDice();
             cast.diceRoll += caster.castLevel;
 
             ShowDiceRollText();
