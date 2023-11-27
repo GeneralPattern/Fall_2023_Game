@@ -13904,6 +13904,7 @@ MonoBehaviour:
   amountOfDice: 2
   throwForce: 5
   rollForce: 10
+  castRoll: {fileID: 11400000, guid: 64fa0d0a893259942bff81f26369a25d, type: 2}
 --- !u!4 &2116047740
 Transform:
   m_ObjectHideFlags: 0

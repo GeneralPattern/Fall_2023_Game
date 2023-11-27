@@ -13,7 +13,6 @@ public class Dice : MonoBehaviour
     public Rigidbody rb;
 
     private int _diceIndex = -1;
-    private int _sumResult; // New variable to store the sum of results
 
     private bool _hasStoppedRolling;
     private bool _delayFinished;
@@ -56,10 +55,8 @@ public class Dice : MonoBehaviour
 
         Debug.Log($"Dice Result {topFace + 1}");
 
-        _sumResult += topFace + 1; // Add the result to the sum
-
-        OnDiceResult?.Invoke(_diceIndex, topFace + 1, _sumResult);
-        
+        // Invoke the event with the dice index, result, and sum
+        OnDiceResult?.Invoke(_diceIndex, topFace + 1, topFace + 1);
     }
 
     public void RollDice(float throwForce, float rollForce, int i)

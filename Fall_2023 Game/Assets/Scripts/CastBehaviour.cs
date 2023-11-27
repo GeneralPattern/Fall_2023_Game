@@ -39,33 +39,41 @@ public class CastBehaviour : MonoBehaviour
 
         if (castedCount.value < caster.spellSlots)
         {
-            diceThrower.RollDice();
-            cast.diceRoll += caster.castLevel;
-
-            ShowDiceRollText();
-
-            Invoke("HideDiceRollText", 1f);
-
-            Cast();
+            StartCoroutine(RollDiceWithDelay());
         }
         else
         {
             Debug.Log("OUT OF SPELLS");
         }
     }
+    
+    private IEnumerator RollDiceWithDelay()
+    {
+        diceThrower.RollDice(); // Roll the dice
+
+        yield return new WaitForSeconds(3f); // Wait for 2 seconds
+
+        ShowDiceRollText(); // Show the text
+        
+        Invoke("HideDiceRollText", 2f);
+
+        // Continue with the casting logic
+        Cast(); 
+    }
 
     private void ShowDiceRollText()
     {
         
         string resultText = "Dice Roll: " + cast.diceRoll + " - ";
-        Debug.Log(cast.diceRoll);
-        if (cast.diceRoll >= card.cost)
+        if (cast.diceRoll + caster.castLevel >= card.cost)
         {
             resultText += "Success!";
+            Debug.Log(cast.diceRoll + " + " + caster.castLevel);
         }
         else
         {
             resultText += "Fail!";
+            Debug.Log(cast.diceRoll + " + " + caster.castLevel);
         }
         Debug.Log(resultText);
         diceRollText.text = resultText;
@@ -79,13 +87,11 @@ public class CastBehaviour : MonoBehaviour
 
     public void Cast()
     {
-        if (cast.diceRoll >= card.cost)
+        if (cast.diceRoll + caster.castLevel >= card.cost)
         {
             enemy.enemyHealth -= card.damage;
             caster.health += card.healingNo;
-            Debug.Log(enemy.enemyHealth);
-            Debug.Log(card.name);
-            Debug.Log(caster.health);
+            
         }
         else
         {
@@ -93,6 +99,5 @@ public class CastBehaviour : MonoBehaviour
         }
 
         castedCount.value += 1;
-        Debug.Log(castedCount.value);
     }
 }
