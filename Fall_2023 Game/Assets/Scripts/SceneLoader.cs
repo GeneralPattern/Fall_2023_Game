@@ -15,4 +15,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Store");
     }
+
+    public void LoadStartMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
 }
