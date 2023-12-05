@@ -1,10 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class CastBehaviour : MonoBehaviour
 {
+    public UnityEvent threeSpellsLeft;
+    public UnityEvent twoSpellsLeft;
+    public UnityEvent oneSpellsLeft;
+    public UnityEvent noSpellsLeft;
+
     public CardData card;
     public IntData cast;
     public IntData enemy;
@@ -17,9 +25,6 @@ public class CastBehaviour : MonoBehaviour
     private GameObject slotNo;
 
     public DiceThrower diceThrower;
-    
-    
-    
 
 
     public void CastCard(GameAction castAction)
@@ -68,12 +73,12 @@ public class CastBehaviour : MonoBehaviour
         if (cast.diceRoll + caster.castLevel >= card.cost)
         {
             resultText += "Success!";
-            Debug.Log(cast.diceRoll + " + " + caster.castLevel);
+            
         }
         else
         {
             resultText += "Fail!";
-            Debug.Log(cast.diceRoll + " + " + caster.castLevel);
+            
         }
         Debug.Log(resultText);
         diceRollText.text = resultText;
@@ -95,9 +100,42 @@ public class CastBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.Log("Try again you filthy bastard");
+            
         }
 
         castedCount.value += 1;
+    }
+
+    private void Update()
+    {
+        if (castedCount.value == 1)
+        {
+            threeSpellsLeft.Invoke();
+            
+        }
+        if (castedCount.value == 2)
+        {
+            twoSpellsLeft.Invoke();
+            
+        }
+        if (castedCount.value == 3)
+        {
+            oneSpellsLeft.Invoke();
+            
+        }
+        if (castedCount.value == 4)
+        {
+            
+            StartCoroutine(DisplayTextAndLoadLoseScene());
+        }
+    }
+
+    private IEnumerator DisplayTextAndLoadLoseScene()
+    {
+        noSpellsLeft.Invoke();
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("StartMenu");
     }
 }

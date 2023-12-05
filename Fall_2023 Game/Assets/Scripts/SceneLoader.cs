@@ -20,4 +20,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("StartMenu");
     }
+    
+    public void LoadTutorialScene()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 }

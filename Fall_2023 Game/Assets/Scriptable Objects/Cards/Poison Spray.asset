@@ -15,10 +15,11 @@ MonoBehaviour:
   name: Poision Spray
   description: Place holder for description
   castLevel: 1
-  artwork: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
+  artwork: {fileID: 21300000, guid: f63376fabe778294baf9639d762df086, type: 3}
   cardType: {fileID: 21300000, guid: 498d54becd9829840a215eba92b66360, type: 3}
   cardID: 4
-  cost: 0
-  damage: 0
+  cost: 6
+  damage: 4
   health: 0
   spellSlots: 0
+  healingNo: 0

@@ -15,4 +15,4 @@ MonoBehaviour:
   goldAmount: 0
   diceRoll: 0
   enemyHealth: 0
-  value: -85
+  value: 0

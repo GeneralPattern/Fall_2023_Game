@@ -8,4 +8,11 @@ public class IntData : ScriptableObject
     public int diceRoll;
     public int enemyHealth;
     public int value = 0;
+
+
+    public void AddToValue(int num)
+    {
+        value += 20;
+    }
 }
+

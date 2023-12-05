@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    public IntData gold;
     public IntData enemy;
     public Slider enemyHealthSlider;
     public Text enemyHealthDisplay;
-    public int maxHealth = 40; // Set your desired maximum health
-    public int minHealth = 0;   // Set your desired minimum health
+    public int maxHealth = 10; 
+    public int minHealth = 0;
+
+    public UnityEvent winGame;
+    
 
     void Start()
     {
@@ -28,5 +34,30 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Optionally, update the text display
         enemyHealthDisplay.text = "Enemy Health: " + enemy.enemyHealth.ToString();
+
+        if (enemy.enemyHealth <= 0)
+        {
+            WinRound();
+        }
+    }
+
+    public void WinRound()
+    {
+        StartCoroutine(DisplayTextAndLoadScene());
+    }
+
+    private IEnumerator DisplayTextAndLoadScene()
+    {
+        winGame.Invoke();
+
+        yield return new WaitForSeconds(3f);
+
+        gold.value += 30;
+
+        enemy.enemyHealth += 5;
+
+        maxHealth += 5;
+
+        SceneManager.LoadScene("StartMenu");
     }
 }
